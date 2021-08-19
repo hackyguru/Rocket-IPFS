@@ -51,13 +51,9 @@ function App(props) {
 
   return (
     <div>
+      
       <ChakraProvider>
-        <Offline>
-          <Container>You're offline!</Container>
-        </Offline>
-        <Online>
-          <Settings />
-        </Online>
+        <Settings />
       </ChakraProvider>
     </div>
   );

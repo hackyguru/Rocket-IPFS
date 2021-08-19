@@ -56,7 +56,8 @@ function App(props) {
           <Container>You're offline!</Container>
         </Offline>
         <Online>
-          <Settings />
+
+        <Settings />
         </Online>
       </ChakraProvider>
     </div>
