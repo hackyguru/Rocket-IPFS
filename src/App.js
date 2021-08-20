@@ -1,5 +1,4 @@
 /*global chrome*/
-
 import logo from "./logo.svg";
 import "./App.css";
 import {
@@ -36,6 +35,7 @@ import Settings from "./pages/Settings";
 import IPFS from "./components/ipfsdrop";
 import NFT from "./components/nftdrop";
 import FileUpload from "./pages/FileUpload";
+import Test from "./Test";
 
 function App(props) {
   const [url, setUrl] = useState("");
@@ -54,14 +54,31 @@ function App(props) {
 
   return (
     <div>
+      <Router>
       <ChakraProvider>
         <Offline>
           <Container>You're offline!</Container>
         </Offline>
         <Online>
-          <FileUpload />
+          <Switch>
+            <Route exact path="/">
+            <Home />
+            </Route>
+            <Route exact path="/about">
+              <About/>
+            </Route>
+            <Route exact path="/settings">
+              <Settings/>
+            </Route>
+            <Route exact path="/uploadfile">
+              <FileUpload/>
+            </Route>
+          </Switch>
+          {/* <Test/> */}
+          <NFT/>
         </Online>
       </ChakraProvider>
+      </Router>
     </div>
   );
 }
