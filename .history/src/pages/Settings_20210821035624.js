@@ -31,7 +31,7 @@ import {
   ModalBody,
   ModalCloseButton,
   Input,
-  Link as ChakraLink,
+  Link as ChakraL
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
 import {

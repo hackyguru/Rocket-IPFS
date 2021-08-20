@@ -27,7 +27,6 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Link as ChakraLink,
   Button,
   useDisclosure,
 } from "@chakra-ui/react";

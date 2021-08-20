@@ -20,9 +20,18 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Link as ChakraLink,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
+import Backup from "../components/backup";
 import {
   BrowserRouter as Router,
   Switch as BrowserSwitch,
@@ -34,15 +43,17 @@ import {
 } from "react-router-dom";
 import IPFS from "../components/ipfsdrop";
 import IPFSButton from "../components/ipfsbutton";
+import WebsiteHost from "../components/websiteshost";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-export default function FileUpload() {
+export default function WebBackup() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <Box w="350px" h="600px" bgGradient="linear(to-b, #12395A, #6BC4CE)">
-      <VStack align="stretch" width="100%">
-        <Box>
-          <Flex>
-            <Box p="2">
+    <div>
+      <Box w="350px" h="600px" bgGradient="linear(to-b, #12395A, #6BC4CE)">
+        <VStack align="stretch" width="100%">
+        <Box p="2">
               <Flex>
                 <Link to="/">
                   <IconButton
@@ -63,40 +74,32 @@ export default function FileUpload() {
                 </Heading>
               </Flex>
             </Box>
-            <Spacer />
-            <Box p="2.5">
-              <ChakraLink
-                href="https://cipher-infoline.gitbook.io/rocket-ipfs/"
-                isExternal
-              >
+              <Spacer />
+              <Box p="2.5">
                 <IconButton
                   variant="unstyled"
                   aria-label="Info"
                   icon={<Icon color="white" as={FiHelpCircle} />}
-                  // onClick={<Redirect to="/about" />}
+                  onClick={<Redirect to="/about" />}
                 />
-              </ChakraLink>
-              <Link to="/about">
                 <IconButton
                   variant="unstyled"
                   aria-label="Info"
                   icon={<Icon color="white" as={FiInfo} />}
                 />
-              </Link>
-              <Link to="/settings">
                 <IconButton
                   variant="unstyled"
                   aria-label="Settings"
                   icon={<Icon color="white" as={FiSettings} />}
                 />
-              </Link>
-            </Box>
-          </Flex>
-        </Box>
-        <Container width="100%">
-          <IPFS />
-        </Container>
-      </VStack>
-    </Box>
+              </Box>
+            </Flex>
+          </Box>
+          <Container width="100%">
+            <Backup />
+          </Container>
+        </VStack>
+      </Box>
+    </div>
   );
 }

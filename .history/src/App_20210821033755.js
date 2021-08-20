@@ -77,7 +77,7 @@ function App(props) {
               <FileUpload />
             </Route>
             <Route exact path="/webhosting">
-              <WebHostingPage />
+              <FileUpload />
             </Route>
             <Route exact path="/webbackup">
               <WebBackup />

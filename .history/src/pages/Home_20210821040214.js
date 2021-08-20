@@ -71,10 +71,9 @@ export default function Home() {
         </Box>
         <Center>
           <Box
-            bgImage="url('https://media.discordapp.net/attachments/873587956013752340/878417666132557944/HeroRocket.png')"
+            bgImage="url('https://cdn.discordapp.com/attachments/873587956013752340/877665795377889330/Glass.png')"
             width="94%"
             height="425"
-            borderRadius="20"
           ></Box>
         </Center>
         <Center>

@@ -20,7 +20,6 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
 import {

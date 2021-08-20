@@ -27,11 +27,11 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Link as ChakraLink,
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
+import Backup from "../components/backup";
 import {
   BrowserRouter as Router,
   Switch as BrowserSwitch,
@@ -46,7 +46,7 @@ import IPFSButton from "../components/ipfsbutton";
 import WebsiteHost from "../components/websiteshost";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-export default function WebHostingPage() {
+export default function WebBackup() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -109,7 +109,7 @@ export default function WebHostingPage() {
             </Flex>
           </Box>
           <Container width="100%">
-            <WebsiteHost />
+            <Backup />
           </Container>
         </VStack>
       </Box>

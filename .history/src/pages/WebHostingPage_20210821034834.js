@@ -27,7 +27,6 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Link as ChakraLink,
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -80,31 +79,22 @@ export default function WebHostingPage() {
               </Box>
               <Spacer />
               <Box p="2.5">
-                <ChakraLink
-                  href="https://cipher-infoline.gitbook.io/rocket-ipfs/"
-                  isExternal
-                >
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Info"
-                    icon={<Icon color="white" as={FiHelpCircle} />}
-                    // onClick={<Redirect to="/about" />}
-                  />
-                </ChakraLink>
-                <Link to="/about">
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Info"
-                    icon={<Icon color="white" as={FiInfo} />}
-                  />
-                </Link>
-                <Link to="/settings">
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Settings"
-                    icon={<Icon color="white" as={FiSettings} />}
-                  />
-                </Link>
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Info"
+                  icon={<Icon color="white" as={FiHelpCircle} />}
+                  onClick={<Redirect to="/about" />}
+                />
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Info"
+                  icon={<Icon color="white" as={FiInfo} />}
+                />
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Settings"
+                  icon={<Icon color="white" as={FiSettings} />}
+                />
               </Box>
             </Flex>
           </Box>

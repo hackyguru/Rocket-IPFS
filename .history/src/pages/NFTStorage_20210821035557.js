@@ -20,7 +20,6 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
 import {
@@ -34,9 +33,10 @@ import {
 } from "react-router-dom";
 import IPFS from "../components/ipfsdrop";
 import IPFSButton from "../components/ipfsbutton";
+import NFTUpload from "../components/nftupload";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-export default function FileUpload() {
+export default function NFTStorage() {
   return (
     <Box w="350px" h="600px" bgGradient="linear(to-b, #12395A, #6BC4CE)">
       <VStack align="stretch" width="100%">
@@ -94,7 +94,7 @@ export default function FileUpload() {
           </Flex>
         </Box>
         <Container width="100%">
-          <IPFS />
+          <NFTUpload />
         </Container>
       </VStack>
     </Box>

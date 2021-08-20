@@ -31,7 +31,6 @@ import {
   ModalBody,
   ModalCloseButton,
   Input,
-  Link as ChakraLink,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
 import {
@@ -45,7 +44,8 @@ import {
 } from "react-router-dom";
 import IPFS from "../components/ipfsdrop";
 import IPFSButton from "../components/ipfsbutton";
-import { IoArrowBackCircleOutline } from "react-icons/io5";
+import {IoArrowBackCircleOutline} from "react-icons/io"
+
 
 export default function Settings() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,54 +55,29 @@ export default function Settings() {
       <VStack align="stretch" width="100%">
         <Box>
           <Flex>
-            <Box p="2">
-              <Flex>
-                <Link to="/">
-                  <IconButton
-                    size="lg"
-                    variant="unstyled"
-                    aria-label="Info"
-                    icon={<Icon color="white" as={IoArrowBackCircleOutline} />}
-                    onClick={<Redirect to="/" />}
-                  />
-                </Link>
-                <Heading
-                  paddingTop="3"
-                  fontSize="20"
-                  color="white"
-                  fontFamily={"monospace"}
-                >
-                  rocket
-                </Heading>
-              </Flex>
+            <Box p="4">
+              <Heading fontSize="20" color="white" fontFamily={"monospace"}>
+                rocket
+              </Heading>
             </Box>
             <Spacer />
             <Box p="2.5">
-              <ChakraLink
-                href="https://cipher-infoline.gitbook.io/rocket-ipfs/"
-                isExternal
-              >
-                <IconButton
-                  variant="unstyled"
-                  aria-label="Info"
-                  icon={<Icon color="white" as={FiHelpCircle} />}
-                  // onClick={<Redirect to="/about" />}
-                />
-              </ChakraLink>
-              <Link to="/about">
-                <IconButton
-                  variant="unstyled"
-                  aria-label="Info"
-                  icon={<Icon color="white" as={FiInfo} />}
-                />
-              </Link>
-              <Link to="/settings">
-                <IconButton
-                  variant="unstyled"
-                  aria-label="Settings"
-                  icon={<Icon color="white" as={FiSettings} />}
-                />
-              </Link>
+              <IconButton
+                variant="unstyled"
+                aria-label="Info"
+                icon={<Icon color="white" as={FiHelpCircle} />}
+                onClick={<Redirect to="/about" />}
+              />
+              <IconButton
+                variant="unstyled"
+                aria-label="Info"
+                icon={<Icon color="white" as={FiInfo} />}
+              />
+              <IconButton
+                variant="unstyled"
+                aria-label="Settings"
+                icon={<Icon color="white" as={FiSettings} />}
+              />
             </Box>
           </Flex>
         </Box>

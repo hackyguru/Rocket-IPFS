@@ -27,11 +27,11 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Link as ChakraLink,
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
 import { FiHelpCircle, FiInfo, FiSettings } from "react-icons/fi";
+import Backup from "../components/backup";
 import {
   BrowserRouter as Router,
   Switch as BrowserSwitch,
@@ -46,7 +46,7 @@ import IPFSButton from "../components/ipfsbutton";
 import WebsiteHost from "../components/websiteshost";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
-export default function WebHostingPage() {
+export default function WebBackup() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -80,36 +80,27 @@ export default function WebHostingPage() {
               </Box>
               <Spacer />
               <Box p="2.5">
-                <ChakraLink
-                  href="https://cipher-infoline.gitbook.io/rocket-ipfs/"
-                  isExternal
-                >
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Info"
-                    icon={<Icon color="white" as={FiHelpCircle} />}
-                    // onClick={<Redirect to="/about" />}
-                  />
-                </ChakraLink>
-                <Link to="/about">
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Info"
-                    icon={<Icon color="white" as={FiInfo} />}
-                  />
-                </Link>
-                <Link to="/settings">
-                  <IconButton
-                    variant="unstyled"
-                    aria-label="Settings"
-                    icon={<Icon color="white" as={FiSettings} />}
-                  />
-                </Link>
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Info"
+                  icon={<Icon color="white" as={FiHelpCircle} />}
+                  onClick={<Redirect to="/about" />}
+                />
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Info"
+                  icon={<Icon color="white" as={FiInfo} />}
+                />
+                <IconButton
+                  variant="unstyled"
+                  aria-label="Settings"
+                  icon={<Icon color="white" as={FiSettings} />}
+                />
               </Box>
             </Flex>
           </Box>
           <Container width="100%">
-            <WebsiteHost />
+            <Backup />
           </Container>
         </VStack>
       </Box>
