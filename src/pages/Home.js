@@ -40,22 +40,28 @@ export default function Home() {
             </Box>
             <Spacer />
             <Box p="2.5">
+              <Link to="/about">
               <IconButton
                 variant="unstyled"
                 aria-label="Info"
                 icon={<Icon color="white" as={FiHelpCircle} />}
-                onClick={<Redirect to="/about" />}
+                // onClick={<Redirect to="/about" />}
               />
+              </Link>
+              <Link to="/about">
               <IconButton
                 variant="unstyled"
                 aria-label="Info"
                 icon={<Icon color="white" as={FiInfo} />}
               />
+              </Link>
+              <Link to="/settings">
               <IconButton
                 variant="unstyled"
                 aria-label="Settings"
                 icon={<Icon color="white" as={FiSettings} />}
               />
+              </Link>
             </Box>
           </Flex>
         </Box>
@@ -75,12 +81,14 @@ export default function Home() {
             height="75"
           >
             <Flex>
+              <Link to="/uploadfile">
               <IconButton
                 fontSize="2xl"
                 variant="unstyled"
                 aria-label="Upload"
                 icon={<Icon color="#6BC4CE" as={FiUpload} />}
               />
+              </Link>
               <Spacer />
               <IconButton
                 fontSize="2xl"
