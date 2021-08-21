@@ -113,6 +113,7 @@ function NFTUpload(props) {
        
       updateData(metadata.url);
       updateData1(metadata.ipnft);
+    
     } catch(error){
         console.log(error);
     }

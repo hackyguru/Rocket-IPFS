@@ -32,11 +32,10 @@ import particlesConfig from "../config/particleconfig";
 
 export default function Home() {
   return (
-    
-   
+  
     <Box w="350px" h="600px" bgGradient="linear(to-b, #12395A, #6BC4CE)">
       {/* <Box> */}
-    {/* <Particles params={particlesConfig} > */}
+    
       <VStack align="stretch" width="100%">
       
         <Box>

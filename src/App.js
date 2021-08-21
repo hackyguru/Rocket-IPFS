@@ -58,14 +58,17 @@ function App(props) {
   return (
     <div>
       <Router>
-        <ChakraProvider>
+        <ChakraProvider>     
           {/* <Offline>
             <Container>You're offline!</Container>
           </Offline> */}
           {/* <Online> */}
+
           <Switch>
             <Route exact path="/">
+              
               <Home />
+              
             </Route>
             <Route exact path="/about">
               <About />
@@ -90,7 +93,9 @@ function App(props) {
           
           {/* <NFT/> */}
           {/* </Online> */}
+          
         </ChakraProvider>
+        
       </Router>
     </div>
   );

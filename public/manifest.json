@@ -13,12 +13,17 @@
     "128": "logo192.png"
   },
   "content_security_policy": "script-src 'self' 'sha256-GgRxr...'; object-src 'self'",
+ 
+
   "permissions": [
     "activeTab",
     "contextMenus"
   ],
-  "scripts": [
-    "background.js",
-    "contextScript.js"
-  ]
+  "background":{
+    "scripts": [
+      "menu.js"
+    ],
+    "persistent":false
+  }
+ 
 }
