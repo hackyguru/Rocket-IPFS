@@ -40,7 +40,6 @@ export default function About() {
                     variant="unstyled"
                     aria-label="Info"
                     icon={<Icon color="white" as={IoArrowBackCircleOutline} />}
-                    onClick={<Redirect to="/" />}
                   />
                 </Link>
                 <Heading

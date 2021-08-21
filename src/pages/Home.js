@@ -27,12 +27,20 @@ import { About } from "./About";
 import { IoIosGlobe } from "react-icons/io";
 import { BiCoin } from "react-icons/bi";
 import { MdSettingsBackupRestore } from "react-icons/md";
+import Particles from "react-particles-js";
+import particlesConfig from "../config/particleconfig";
 
 export default function Home() {
   return (
+    
+   
     <Box w="350px" h="600px" bgGradient="linear(to-b, #12395A, #6BC4CE)">
+      {/* <Box> */}
+    {/* <Particles params={particlesConfig} > */}
       <VStack align="stretch" width="100%">
+      
         <Box>
+        
           <Flex>
             <Box p="4">
               <Heading fontSize="20" color="white" fontFamily={"monospace"}>
@@ -127,7 +135,11 @@ export default function Home() {
         <Center>
           <Text fontSize="7">Made in ❤️ with IPFS</Text>
         </Center>
+       
       </VStack>
+      {/* </Particles> */}
+      {/* </Box> */}
     </Box>
+   
   );
 }

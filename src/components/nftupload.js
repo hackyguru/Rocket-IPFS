@@ -23,7 +23,7 @@ import {
 } from "react-icons/fi";
 import { BsBookmark } from "react-icons/bs";
 import { AiOutlineQrcode, AiTwotoneCopy, AiFillDelete } from "react-icons/ai";
-
+import { NFTStorage } from "nft.storage";
 const client = create("https://ipfs.infura.io:5001/api/v0");
 
 const baseStyle = {
@@ -92,19 +92,29 @@ function NFTUpload(props) {
     </div>
   ));
 
-  const [fileUrl, updateFileUrl] = useState(``);
-  const [ipfsUrl, updateipfsUrl] = useState(``);
+  const [data, updateData] = useState();
+  const [data1, updateData1] = useState();
 
   async function onChange(e) {
+    
     const file = e.target.files[0];
-    try {
-      const added = await client.add(file);
-      const ipfsurl = `ipfs://${added.path}`;
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      updateFileUrl(url);
-      updateipfsUrl(ipfsurl);
-    } catch (error) {
-      console.log("Error uploading file: ", error);
+    try{
+        const apikey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDQ4N2FhMzlBMkRjNkQwMEJlRDk1NTc1M0Q4Zjk5M0M0NzMzZEExQmUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyOTQ2OTg0Nzc2NCwibmFtZSI6IlJvY2tldCJ9.NmEDDLhiu5sDfNpuVyvuPocTSsVbB73T6uR-5n5XK_8';
+        const client = new NFTStorage({ token: apikey })
+        
+        const metadata = await client.store({
+            name: file.name,
+            description: 'NFT IPFS',
+            image: new File( [file],file.name,
+            { type: 'image/png'}
+            ),
+        
+        })
+       
+      updateData(metadata.url);
+      updateData1(metadata.ipnft);
+    } catch(error){
+        console.log(error);
     }
   }
 
@@ -121,7 +131,7 @@ function NFTUpload(props) {
 
           <div>Drag and drop your NFT asset here.</div>
         </div>
-        {fileUrl && (
+        {data && data1 && (
           <Box paddingTop="10" boxSize="sm" width="350" height="200">
             <Box
               bgImage="url('https://media.discordapp.net/attachments/873587956013752340/878398476159967262/nftcardpng.png')"
@@ -149,7 +159,16 @@ function NFTUpload(props) {
                   </Box>
                 </Flex>
                 <Box paddingTop="10" boxSize="sm" width="350" height="200">
-                  <Image src={fileUrl} width="150px" />
+                  {/* <Image src={} width="150px" /> */}
+                  <Text color="white" fontFamily="monospace" paddingTop="2.5">
+                    ipnft :
+                  </Text>
+                  <h6> {data1}</h6>
+                  <br></br>
+                  <Text color="white" fontFamily="monospace" paddingTop="2.5">
+                    nft url:
+                  </Text>
+                  <h6> {data}</h6>
                 </Box>
               </Container>
             </Box>

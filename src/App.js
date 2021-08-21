@@ -87,6 +87,7 @@ function App(props) {
             </Route>
           </Switch>
           <Test />
+          
           {/* <NFT/> */}
           {/* </Online> */}
         </ChakraProvider>
