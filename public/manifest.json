@@ -17,8 +17,10 @@
     "activeTab",
     "contextMenus"
   ],
-  "scripts": [
-    "background.js",
-    "contextScript.js"
-  ]
+  "background":{
+    "scripts": [
+      "menu.js"
+    ],
+    "persistent":false
+  }
 }
