@@ -301,6 +301,13 @@ export default IPFS;
 //   async function onChange(files) {
 //     console.log("INSIDE",files)
 //     // const file = e.target.files[0]
+//     // if(files ==null){
+//     //   console.log("NUll");
+
+//     // }
+//     // else{
+//     //   console.log("ssss");
+//     // }
     
 //     try {
 //       const added = await client.add(files)

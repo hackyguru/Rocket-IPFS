@@ -66,7 +66,7 @@ export default function WebBackup() {
                       icon={
                         <Icon color="white" as={IoArrowBackCircleOutline} />
                       }
-                      onClick={<Redirect to="/" />}
+                      
                     />
                   </Link>
                   <Heading

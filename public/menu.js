@@ -2,12 +2,9 @@
  function  getClickHandler() {
     return function(info, tab) {
      var url =  info.srcUrl;
-     
-    
 
-    
-     
    chrome.tabs.create({ url: url, });
+   
 
 //    document.cookie= url;
 
