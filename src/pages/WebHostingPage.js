@@ -65,7 +65,7 @@ export default function WebHostingPage() {
                       icon={
                         <Icon color="white" as={IoArrowBackCircleOutline} />
                       }
-                      onClick={<Redirect to="/" />}
+                    
                     />
                   </Link>
                   <Heading
